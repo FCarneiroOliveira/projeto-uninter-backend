@@ -1,5 +1,5 @@
 'use strict';
-
+// Criando a tabela usuários com todos os dados pedidos e requisitos 
 module.exports = {
     up: async (queryInterface, Sequelize) => {
         await queryInterface.createTable('usuarios', {
@@ -39,7 +39,7 @@ module.exports = {
             }
         });
     },
-
+    // método down para reverter a alteração caso o comando db:migrate:undo seja executado
     down: async (queryInterface, Sequelize) => {
         await queryInterface.dropTable('usuarios');
     }

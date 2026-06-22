@@ -1,7 +1,9 @@
+// Importamos o módulo 'path' para resolver caminhos absolutos do sistema
 const path = require('path');
 
+// Mapeamos os caminhos customizados para que o CLI do Sequelize localize nossa estrutura em camadas (/src)
 module.exports = {
-    'config': path.resolve('src', 'infrastructure', 'config.js'),
-    'models-path': path.resolve('src', 'infrastructure', 'models'),
-    'migrationsPath': path.resolve('src', 'infrastructure','database', 'migrations')
-};
+  'config': path.resolve('src', 'infrastructure', 'config.js'),
+  'models-path': path.resolve('src', 'infrastructure', 'models'),
+  'migrations-path': path.resolve('src', 'infrastructure', 'database', 'migrations')
+}; 

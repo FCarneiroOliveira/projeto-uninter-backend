@@ -1,7 +1,10 @@
 'use strict';
+
+/**@type {import('sequelize-cli').Migration} */
+
 // Criando a tabela usuários com todos os dados pedidos e requisitos 
 module.exports = {
-    up: async (queryInterface, Sequelize) => {
+      async up (queryInterface, Sequelize) {
         await queryInterface.createTable('usuarios', {
             id: {
                 allowNull: false,
@@ -32,7 +35,7 @@ module.exports = {
                 allowNull: false,
                 defaultValue: false
             },
-            created_at: {
+            creado_em: {
                 allowNull: false,
                 type: Sequelize.DATE,
                 defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
@@ -40,7 +43,7 @@ module.exports = {
         });
     },
     // método down para reverter a alteração caso o comando db:migrate:undo seja executado
-    down: async (queryInterface, Sequelize) => {
+     async down (queryInterface, Sequelize) {
         await queryInterface.dropTable('usuarios');
     }
 };

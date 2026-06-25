@@ -47,7 +47,7 @@ class Usuario extends Model{
     return this;
  }
 
- // método 'associate' para relacionar o utilizador aos pedidos
+ // método 'associate' para relacionar o utilizador aos pedidos e o mesmo pode ter vários pedidos
     static associate(models){
         this.hasMany(models.Pedido, {foreignKey: 'usuario_id', as: 'pedidos'});
     }
